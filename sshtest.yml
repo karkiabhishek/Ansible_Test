@@ -1,0 +1,9 @@
+---
+  - name: Play1
+    hosts: all
+    tasks: 
+    - name: Install SSH Key
+      authorized_key:
+        user: prabhat
+        state: present
+        key: "{{lookup('file','/root/.ssh/id_rsa.pub')}}"  
